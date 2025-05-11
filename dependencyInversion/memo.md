@@ -11,7 +11,7 @@ UserRdbRepository
 ## good
 
 ```
-UserControlle → UserServiceInterface
+UserController → UserServiceInterface
                 ↑
                 UserService → UserRepositoryInterface
                               ↑
