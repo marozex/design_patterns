@@ -3,14 +3,14 @@ export {}
 class User {}
 
 class UserController {
-  private userController = new UserService()
+  private userService = new UserService()
 
   create(user: User): User {
-    return this.userController.create(user)
+    return this.userService.create(user)
   }
 
   findById(id: string): User {
-    return this.userController.findById(id)
+    return this.userService.findById(id)
   }
 }
 
