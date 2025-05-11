@@ -5,5 +5,5 @@
 ```
 npm install typescript ts-node
 npx tsc --init
-npx ts-node singleResponsible.ts
+npx ts-node singleResponsible/bad.ts
 ```
