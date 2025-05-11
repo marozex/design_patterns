@@ -12,8 +12,8 @@ UserRdbRepository
 
 ```
 UserControlle → UserServiceInterface
-                ↓
+                ↑
                 UserService → UserRepositoryInterface
-                              ↓
+                              ↑
                               UserRdbRepository
 ```
