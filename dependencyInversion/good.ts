@@ -15,7 +15,9 @@ interface IUserRepository {
 }
 
 class UserController {
+  // 下記コメント部分が不要になる
   // private userService = new UserService()
+
   constructor(private userService: IUserService) {
     this.userService = userService
   }
@@ -30,7 +32,9 @@ class UserController {
 }
 
 class UserService implements IUserService {
+  // 下記コメント部分が不要になる
   //   private userRepository = new UserRdbRepository()
+
   constructor(private userRepository: IUserRepository) {
     this.userRepository = userRepository
   }
@@ -56,8 +60,23 @@ class UserRdbRepository implements IUserRepository {
   }
 }
 
+class TestUserRdbRepository implements IUserRepository {
+  create(user: User): User {
+    console.log("RDBでのユーザー作成処理")
+    return user
+  }
+
+  findById(id: string): User {
+    console.log("test RDBでのユーザー検索処理")
+    return new User()
+  }
+}
+
 function run() {
-  const repository = new UserRdbRepository()
+  // 下記のようにtestとの切り替えが容易になっている
+  // const repository = new UserRdbRepository()
+  const repository = new TestUserRdbRepository()
+
   const service = new UserService(repository)
   const controller = new UserController(service)
 
